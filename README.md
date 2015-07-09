@@ -19,13 +19,17 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-class Person
+class City
   include Mongoid::Document
   include Mongoid::NormalizeStrings
 
   field :name, type: String
   normalize :name
 end
+
+city = City.create(name: 'Córdoba')
+city.name # => 'Córdoba'
+city.name_normalized # => 'cordoba'
 ```
 
 ## Contributing
