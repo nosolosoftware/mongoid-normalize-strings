@@ -17,7 +17,13 @@ module Mongoid
       # Returns normalized_fields Class intance variable
       #
       def normalized_fields
-        self.superclass == Object ? @normalized_fields : self.superclass.normalized_fields
+        normalized_fields = (@normalized_fields || Set.new)
+
+        if self.superclass.methods.include? :normalized_fields
+          normalized_fields + self.superclass.normalized_fields
+        else
+          normalized_fields
+        end
       end
     end
 
