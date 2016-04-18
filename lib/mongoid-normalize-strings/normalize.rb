@@ -17,7 +17,7 @@ module Mongoid
       # Returns normalized_fields Class intance variable
       #
       def normalized_fields
-        @normalized_fields
+        self.superclass == Object ? @normalized_fields : self.superclass.normalized_fields
       end
     end
 

@@ -20,4 +20,12 @@ describe Mongoid::NormalizeStrings do
     city.save
     expect(city.reload.name_normalized).to eq('avila')
   end
+
+  it 'support one level of heritage' do
+    class Aux < City
+    end
+
+    expect(City.normalized_fields).to match_array([:name])
+    expect(Aux.normalized_fields).to match_array([:name])
+  end
 end
