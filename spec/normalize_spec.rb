@@ -11,7 +11,7 @@ describe Mongoid::NormalizeStrings do
 
   describe 'hooks' do
     it 'normalize fields after create' do
-      city = City.create(name: 'Córdoba')
+      city = City.create(name: ' Córdoba ')
       expect(city.name_normalized).to eq('cordoba')
     end
 

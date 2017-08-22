@@ -37,7 +37,7 @@ module Mongoid
       base.send(:before_validation) do
         self.class.normalized_fields.each do |field_name|
           if self[field_name]
-            self["#{field_name}_normalized"] = I18n.transliterate(self[field_name]).downcase
+            self["#{field_name}_normalized"] = I18n.transliterate(self[field_name]).downcase.strip
           end
         end
       end
