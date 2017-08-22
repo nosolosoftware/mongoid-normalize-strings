@@ -34,7 +34,7 @@ module Mongoid
       base.extend(ClassMethods)
 
       ## Save normalized field value
-      base.send(:before_save) do
+      base.send(:before_validation) do
         self.class.normalized_fields.each do |field_name|
           if self[field_name]
             self["#{field_name}_normalized"] = I18n.transliterate(self[field_name]).downcase
