@@ -1,0 +1,20 @@
+sudo: false
+language: ruby
+rvm:
+  - 2.6.0
+before_install: gem install bundler -v 1.16.1
+
+gemfile:
+  - Gemfile
+  - gemfiles/mongoid-5.0.gemfile
+  - gemfiles/mongoid-6.0.gemfile
+
+services:
+  - mongodb
+
+addons:
+  apt:
+    sources:
+      - mongodb-3.4-precise
+    packages:
+      - mongodb-org-server

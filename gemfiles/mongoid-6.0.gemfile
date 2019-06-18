@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
 # Specify your gem's dependencies in mongoid-normalize-strings.gemspec
-gemspec
+gemspec path: '../'
 
-gem 'mongoid', '~> 7.0'
+gem 'mongoid', '~> 6.0'
