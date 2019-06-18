@@ -1,6 +1,6 @@
-development:
-  sessions:
+test:
+  clients:
     default:
-      database: mongoid
+      database: normalize_string_test
       hosts:
         - localhost:27017

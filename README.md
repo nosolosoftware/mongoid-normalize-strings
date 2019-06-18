@@ -16,6 +16,10 @@ Or install it yourself as:
 
     $ gem install mongoid-normalize-strings
 
+## Compatibility
+
+Mongoid Filterable supports Mongoid versions 3, 4, 5, 6 and now 7.
+
 ## Usage
 
 ```ruby
